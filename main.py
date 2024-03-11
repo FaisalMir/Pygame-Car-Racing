@@ -18,14 +18,18 @@ pygame.display.set_caption("Racing Game!")
 
 FPS = 60
 
+def draw(win, images):
+    for img, pos in images:
+        win.blit(img, pos)
+
 run = True
 clock = pygame.time.Clock()
+images = [(GRASS,(0,0)), (TRACK,(0,0))]
+
 while run:
     clock.tick(FPS)
 
-    WIN.blit(GRASS, (0,0))
-    WIN.blit(TRACK, (0,0))
-    WIN.blit(RED_CAR, (0,0))
+    draw(WIN,images)
 
     pygame.display.update()
 
